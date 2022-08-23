@@ -4,6 +4,7 @@
   "description": "Aleo for Visual Studio Code",
   "version": "0.0.1",
   "icon": "images/aleo-logo.png",
+  "publisher": "MinerDAO",
   "author": {
     "name": "Maxmillion"
   },
