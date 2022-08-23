@@ -1,0 +1,115 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Aleo",
+	"scopeName": "source.aleo",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#function-name"
+		},
+		{
+			"include": "#finalize"
+		},
+		{
+			"include": "#qualifiers"
+		},
+		{
+			"include": "#visibility"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.aleo",
+				"match": "\\b(function|program|as|by|interface|closure|into|import)\\b"
+			}]
+		},
+		"function-name": {
+			"patterns": [
+				{
+					"name": "meta.definition.function.aleo",
+					"begin": "function",
+					"end": ":"
+				}
+			]
+		},
+		"finalize": {
+			"patterns": [
+				{
+					"name": "keyword.other.finalize.aleo",
+					"match": "\\b(finalize|mapping|increment|decrement)\\b"
+				}
+			]
+		},
+		"qualifiers": {
+			"patterns": [
+				{
+					"name": "keyword.control.qualifiers.aleo",
+					"match": "\\b()\\b"
+				}
+			]
+		},
+		"visibility": {
+			"patterns": [
+				{
+					"name": "meta.type.name",
+					"match": "\\b(constant|public|private|record|aleo)\\b"
+  			}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric.aleo",
+					"match": "\\b(-)?[0-9.]+\\b"
+				}
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"name": "punctuation.definition.string.begin.aleo",
+					"match": "\"",
+					"include": "#inside_string"
+				}
+			]
+		},
+		"inside_string": {
+			"name": "string.quoted.double.aleo",
+			"patterns": [
+				{
+					"name": "constant.character.escape.aleo",
+					"match": "\\."
+				},
+				{
+					"name": "punctuation.definition.string.end.aleo",
+					"match": "\""
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.double-slash.aleo",
+					"match": "\\s*//.*"
+				},
+				{
+					"name": "comment.block.c",
+					"begin": "/\\*",
+					"end": "\\*/"
+				}
+			]
+		}
+	}
+}

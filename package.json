@@ -1,0 +1,32 @@
+{
+  "name": "vscode-aleo",
+  "displayName": "Aleo",
+  "description": "Aleo for Visual Studio Code",
+  "version": "0.0.1",
+  "icon": "images/aleo-logo.png",
+  "author": {
+    "name": "Maxmillion"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/minerdao/vscode-aleo"
+  },
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "leo",
+      "aliases": ["Aleo", "Leo", "leo"],
+      "extensions": [".aleo"]
+    }],
+    "grammars": [{
+      "language": "leo",
+      "scopeName": "source.aleo",
+      "path": "./syntaxes/aleo.tmLanguage.json"
+    }]
+  }
+}
